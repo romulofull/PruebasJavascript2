@@ -94,5 +94,38 @@ if (ns !== 'ambato') {
 return ns
 }
 })
-
 console.log(namefiltrados)
+
+
+
+const perros = ['beagle', 'aleman', 'bulldog']
+const gatos = ['siames', 'escoces', 'exotico']
+
+console.log(perros)
+console.log(gatos)
+console.log(perros.concat(gatos))
+console.log ([...perros, ...gatos])
+
+const user = {
+razaperro: "beagle",
+razagato: "siames"
+}
+
+const useraddress =  {
+    street: "Main Street",
+    city: "Munchen"
+    }
+
+const userinfo = {  ...user, ...useraddress}
+console.log (userinfo)
+console.log(user)
+console.log(useraddress)
+
+
+import {add,multiply, title, active, points} from "./add.js"
+console.log(add(10,20))
+console.log(multiply(10,20))
+console.log (active, points, title)
+
+import addModule  from "./add.js"
+console.log (addModule)
