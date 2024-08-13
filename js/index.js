@@ -129,3 +129,53 @@ console.log (active, points, title)
 
 import addModule  from "./add.js"
 console.log (addModule)
+
+const person = {
+    name: 'ryan',
+    address: {city: 'london'}
+}
+
+console.log(person.address.city)
+//console.log(person.location.city)
+console.log(person.location?.city)
+
+if (person.location) {console.log(person.location.city)}
+
+let datas = fetch('https://jsonplaceholder.typicode.com/posts')
+console.log(datas)
+
+let dataso = fetch('https://jsonplaceholder.typicode.com/posts')
+.then(function () {console.log('finalizo la carga')})
+console.log('linea 2')
+
+let datasop = fetch('https://jsonplaceholder.typicode.com/posts')
+.then(function (response) {console.log(response)})
+console.log('linea 3')
+
+
+const ul = document.createElement('ul')
+
+fetch('https://jsonplaceholder.typicode.com/posts').then(function (response)
+{return response.json();}).then(function (data) {console.log(data);
+
+data.forEach(function (post) {const li = document.createElement("li");
+li.innerText =post.title;
+ul.append(li);
+});
+document.body.append(ul);
+});
+console.log("linea 5")
+
+async function loadData() {
+const response = await fetch  ('https://jsonplaceholder.typicode.com/posts')
+const data2 = await response.json()
+console.log(data2)
+}
+
+loadData ()
+console.log("linea 6")
+
+
+
+
+
